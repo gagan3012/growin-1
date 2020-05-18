@@ -51,7 +51,7 @@ class NavBarComponent extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/">Stock Monitoring Dashboard</a>
+                <a className="navbar-brand" href="/">Growin</a>
                 <div className="collapse navbar-collapse">
                     <div className="mr-auto"></div>
                     <div className="mr-2 text-light">
