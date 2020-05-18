@@ -249,3 +249,13 @@ The Lambda function doesn't really need any payload, so you can just pass in an 
 Once the test event has been created, you can click the Test button again and it should trigger the function. If you have the application open in the browser, you should be able to see the data streaming in via the chart that are automatically updated. For example:
 
 ![Application Dashboard](doc-images/app-dashboard.png)
+
+aws cognito-idp admin-create-user --user-pool-id ap-south-1_PYHg1SbLY --username "gbhatia880@gmail.com" --user-attributes=Name=email,Value="gbhatia880@gmail.com" --message-action "SUPPRESS"
+
+aws cognito-idp admin-set-user-password --user-pool-id ap-south-1_PYHg1SbLY --username "gbhatia880@gmail.com" --password "password" --permanent
+
+aws secretsmanager create-secret --name "Growin/local/backend" --secret-string '{"username": "username", "password": "password"}'
+aws secretsmanager create-secret --name "Growin/local/datafeed" --secret-string '{"feed_api_key": "TSWQZ2043OGTV4T8"}'
+aws s3api create-bucket --bucket growin-bucket-1 --create-bucket-configuration LocationConstraint=ap-south-1
+aws cloudformation package --template-file cf-template.yaml --s3-bucket growin-bucket-1 --output-template-file packaged-template.yaml
+aws cloudformation deploy --template-file packaged-template.yaml --stack-name amplify-stockmonitoringdashb-local-201348 --capabilities CAPABILITY_IAM
