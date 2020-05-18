@@ -13,6 +13,8 @@ export const intradayStockPriceCreated = /* GraphQL */ `
       low_price
       close_price
       volume
+      createdAt
+      updatedAt
     }
   }
 `;

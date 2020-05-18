@@ -16,6 +16,8 @@ export const createIntradayStockPrice = /* GraphQL */ `
       low_price
       close_price
       volume
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -34,6 +36,8 @@ export const updateIntradayStockPrice = /* GraphQL */ `
       low_price
       close_price
       volume
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -52,6 +56,8 @@ export const deleteIntradayStockPrice = /* GraphQL */ `
       low_price
       close_price
       volume
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -64,6 +70,8 @@ export const createStockSymbol = /* GraphQL */ `
       id
       symbol
       owner
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -76,6 +84,8 @@ export const updateStockSymbol = /* GraphQL */ `
       id
       symbol
       owner
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -88,6 +98,8 @@ export const deleteStockSymbol = /* GraphQL */ `
       id
       symbol
       owner
+      createdAt
+      updatedAt
     }
   }
 `;

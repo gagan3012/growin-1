@@ -8,6 +8,8 @@ export const listAllStockSymbols = /* GraphQL */ `
         id
         symbol
         owner
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -36,6 +38,8 @@ export const retrieveLatestIntradayPrices = /* GraphQL */ `
         low_price
         close_price
         volume
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -53,6 +57,8 @@ export const getIntradayStockPrice = /* GraphQL */ `
       low_price
       close_price
       volume
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -77,6 +83,8 @@ export const listIntradayStockPrices = /* GraphQL */ `
         low_price
         close_price
         volume
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -88,6 +96,8 @@ export const getStockSymbol = /* GraphQL */ `
       id
       symbol
       owner
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -102,6 +112,8 @@ export const listStockSymbols = /* GraphQL */ `
         id
         symbol
         owner
+        createdAt
+        updatedAt
       }
       nextToken
     }

@@ -250,12 +250,10 @@ Once the test event has been created, you can click the Test button again and it
 
 ![Application Dashboard](doc-images/app-dashboard.png)
 
-aws cognito-idp admin-create-user --user-pool-id ap-south-1_PYHg1SbLY --username "gbhatia880@gmail.com" --user-attributes=Name=email,Value="gbhatia880@gmail.com" --message-action "SUPPRESS"
+aws cognito-idp create-user-pool-client --user-pool-id ap-south-1_VRyQGp9pQ --client-name BackendClient --explicit-auth-flows "ADMIN_NO_SRP_AUTH"
 
-aws cognito-idp admin-set-user-password --user-pool-id ap-south-1_PYHg1SbLY --username "gbhatia880@gmail.com" --password "password" --permanent
+aws cognito-idp admin-create-user --user-pool-id ap-south-1_VRyQGp9pQ --username "gbhatia880@gmail.com" --user-attributes=Name=email,Value="gbhatia880@gmail.com" --message-action "SUPPRESS"
+aws cognito-idp admin-set-user-password --user-pool-id ap-south-1_VRyQGp9pQ --username "gbhatia880@gmail.com" --password "password" --permanent
 
-aws secretsmanager create-secret --name "Growin/local/backend" --secret-string '{"username": "username", "password": "password"}'
-aws secretsmanager create-secret --name "Growin/local/datafeed" --secret-string '{"feed_api_key": "TSWQZ2043OGTV4T8"}'
-aws s3api create-bucket --bucket growin-bucket-1 --create-bucket-configuration LocationConstraint=ap-south-1
-aws cloudformation package --template-file cf-template.yaml --s3-bucket growin-bucket-1 --output-template-file packaged-template.yaml
-aws cloudformation deploy --template-file packaged-template.yaml --stack-name amplify-stockmonitoringdashb-local-201348 --capabilities CAPABILITY_IAM
+aws secretsmanager create-secret --name "growin-1/local/backend" --secret-string '{"feed_api_key": "TSWQZ2043OGTV4T8"}'
+
